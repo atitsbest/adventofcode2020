@@ -250,18 +250,12 @@ function find2020Of3(numbers) {
   }
 }
 
-const result2 = find2020Of2(input);
-console.log("Result", result2);
-console.log(
-  "Total",
-  result2.reduce((a, b) => a * b, 1)
-);
-
-const result3 = find2020Of3(input);
-console.log("Result", result3);
-if (result3) {
+const printResult = (result) =>
   console.log(
-    "Total",
-    result3.reduce((a, b) => a * b, 1)
+    "Result",
+    result,
+    result.reduce((a, b) => a * b, 1)
   );
-}
+
+printResult(find2020Of2(input));
+printResult(find2020Of3(input));
