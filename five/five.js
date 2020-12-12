@@ -8,11 +8,9 @@ const rst = (str) => str.substring(1);
 function getSeatNumber(str) {
   const rowStr = str.replace(/[RL]*/g, "").trim();
   const colStr = str.replace(/[FB]*/g, "").trim();
-  const rowRange = [0, 127];
-  const colRange = [0, 7];
   return (
-    findValue(rowRange, fst(rowStr), rst(rowStr), "F") * 8 +
-    findValue(colRange, fst(colStr), rst(colStr), "L")
+    findValue([0, 127], fst(rowStr), rst(rowStr), "F") * 8 +
+    findValue([0, 7], fst(colStr), rst(colStr), "L")
   );
 }
 
