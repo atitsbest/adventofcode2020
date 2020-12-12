@@ -24,5 +24,12 @@ function findValue(range, half, rest, lower) {
   return u;
 }
 
-const max = Math.max.apply(null, input.map(getSeatNumber));
-console.log("Result", max);
+const seatnumbers = input.map(getSeatNumber).sort((a, b) => a - b);
+const max = Math.max.apply(null, seatnumbers);
+const mySeatNr =
+  seatnumbers[
+    seatnumbers
+      .map((s, idx) => (idx === 0 ? 0 : s - seatnumbers[idx - 1]))
+      .indexOf(2) - 1
+  ] + 1;
+console.log("Result", max, "my seat", mySeatNr);
